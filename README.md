@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+<div align="center">
+  <a href="">
+    <img src="./public/logo.png" alt="Logo" width="300">
+  </a>
+  <h2 style="font-size:30px;" align="center">
+    <strong>
+      <span style="color: white; -webkit-text-stroke: 0.4px purple;">Shupee</span> | 
+      <span style="color: purple;">FakeStore</span>
+    </strong>
+  </h2>
+  <p align="center">
+  </p>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Introduction
+Selamat datang di proyek Final Hacktiv8 kami, "Shupee | FakeStore". Ini adalah proyek simulasi toko online yang dibuat menggunakan Reactjs, Tailwind CSS, dan berbagai teknologi lainnya. Proyek ini bertujuan untuk memberikan pengalaman pengguna yang nyaman saat berbelanja online, dengan fitur-fitur yang menarik dan fungsionalitas yang lengkap.
 
-In the project directory, you can run:
+Proyek ini adalah hasil kerja keras dari grup kami, yang terdiri dari Muhammad Arya Dipanegara Gunawan, Harfa Sabri Ubaid, dan Akbar Husaini Nurrahman. Kami sangat bersemangat untuk membagikan proyek ini dengan Anda dan berharap Anda menikmati pengalaman berbelanja di "Shupee | FakeStore" kami.
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Reactjs CRA
+- Tailwind CSS
+- Axios
+- Redux Toolkit
+- Redux Persist
+- React icons
+- React Router
 
-### `npm test`
+<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Key Features:
 
-### `npm run build`
+### Login
+     Admin    : admin@shupee.com
+     Password : admin123
+     Admin memudahkan Anda untuk melakukan restock produk dan melihat rekap penjualan.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### User
+    UserName : mor_2314
+    Password : 83r5^_
+    Pengguna memungkinkan Anda menambahkan produk ke keranjang dan checkout
+<br/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Conclusion:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Terima kasih juga kepada Hacktiv8 atas pelatihan dan bimbingannya selama proyek ini. Kami telah belajar banyak dalam perjalanan ini dan siap melanjutkan pengembangan dan peningkatan proyek ini di masa depan.
 
-### `npm run eject`
+## **Project Group Members:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Muhammad Arya Dipanegara Gunawan
+2. Harfa Sabri Ubaid
+3. Akbar Husaini Nurrahman
