@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import LoginContainer from "../../components/LoginContainer";
 
-import { loginUser } from "../../redux/reducers/getUserSlice"; 
+import { loginUser } from "../../redux/reducers/getUserSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 

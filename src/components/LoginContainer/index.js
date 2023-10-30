@@ -55,7 +55,7 @@ const LoginContainer = ({ username, password }) => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 min-h-screen">
+    <div className="flex items-center justify-center bg-white py-12 px-4 sm:px-6 lg:px-8 min-h-screen">
       <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
@@ -70,6 +70,7 @@ const LoginContainer = ({ username, password }) => {
               </label>
               <input
                 type="text"
+                id="username"
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border bg-white border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-black focus:border-black focus:z-10 sm:text-sm"
                 placeholder={username}
                 onChange={emailOnChange}
@@ -81,6 +82,7 @@ const LoginContainer = ({ username, password }) => {
               </label>
               <input
                 type="password"
+                id="password"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border bg-white border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-black focus:border-black focus:z-10 sm:text-sm"
                 placeholder={password}

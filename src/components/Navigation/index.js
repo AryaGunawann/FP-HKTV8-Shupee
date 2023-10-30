@@ -7,6 +7,7 @@ export const Navbar = () => {
   const token = localStorage.token;
   const isAdmin = token === "admin";
   const navigate = useNavigate();
+
   const logoutHandler = () => {
     localStorage.removeItem("token");
     navigate("/login");
@@ -33,37 +34,31 @@ export const Navbar = () => {
           >
             <li>
               {isAdmin ? (
-                <Link to="admin" className="text-black hover:text-primary">
+                <Link to="admin" className="text-black">
                   Product
                 </Link>
               ) : (
-                <Link to="/" className="text-black hover:text-primary">
+                <Link to="/" className="text-black ">
                   Product
                 </Link>
               )}
             </li>
             {isAdmin && (
               <li>
-                <Link
-                  to="admin/sales-recap"
-                  className="text-black hover:text-primary"
-                >
+                <Link to="admin/sales-recap" className="text-black">
                   Sales Recap
                 </Link>
               </li>
             )}
             <li>
               {token ? (
-                <button
-                  onClick={logoutHandler}
-                  className="btn btn-error text-black"
-                >
+                <button onClick={logoutHandler} className="btn text-black">
                   Logout
                 </button>
               ) : (
                 <Link
                   to="/login"
-                  className="bg-green-500 hover:bg-white text-black hover:text-black"
+                  className="bg-green-500  text-black hover:text-black"
                 >
                   Login
                 </Link>
@@ -86,7 +81,9 @@ export const Navbar = () => {
               <Link
                 to="/"
                 className={`${
-                  isAdmin ? "bg-white hover:bg-gray-400" : "bg-white"
+                  isAdmin
+                    ? "bg-white hover:bg-black"
+                    : "bg-white hover:bg-black hover:text-white"
                 } text-black hover:text-black`}
               >
                 {isAdmin ? "Product" : "Product"}
@@ -97,10 +94,12 @@ export const Navbar = () => {
           <li>
             {token ? (
               <button
-                onClick={logoutHandler}
                 className={`${
-                  isAdmin ? "btn-error text-white" : "btn text-white"
+                  isAdmin
+                    ? "btn-error text-white"
+                    : " text-black bg-white hover:bg-red-600 hover:text-white  hover:border-white"
                 }`}
+                onClick={logoutHandler}
               >
                 {isAdmin ? "Logout" : "Logout"}
               </button>
@@ -121,7 +120,10 @@ export const Navbar = () => {
       </div>
       <div className="navbar-end">
         {!isAdmin && token ? (
-          <Link to="/cart" className="btn gap-2">
+          <Link
+            to="/cart"
+            className="btn bg-white text-black hover:bg-black hover:text-white"
+          >
             <FaShoppingCart />
             Cart
           </Link>

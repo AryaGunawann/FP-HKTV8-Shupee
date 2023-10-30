@@ -2,7 +2,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-
 import {
   checkOutCart,
   updateQuantityCart,
@@ -15,13 +14,11 @@ const CartPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const token = localStorage.token;
-
   const { cart } = useSelector((state) => state.cart);
   const { product } = useSelector((state) => state.product);
 
   const updateCart = (e, item) => {
     const updateQty = e.target.value < 1 ? 0 : e.target.value;
-
     item = {
       ...item,
       quantity: Number(updateQty),
@@ -66,13 +63,12 @@ const CartPage = () => {
   return (
     <>
       {cart.length === 0 ? (
-        <h1 className="text-2xl text-center">You have no items yet.</h1>
+        <h1 className="text-2xl text-center mt-4">You have no items yet.</h1>
       ) : (
-        <div className="overflow-x-auto w-full">
-          <table className="table w-full table-auto table-normal table-zebra">
-            {/* head */}
+        <div className="overflow-x-auto min-h-screen p-4 text-black">
+          <table className="table w-full table-auto table-normal table-white text-black">
             <thead>
-              <tr>
+              <tr className="font-semibold text-lg text-black">
                 <th className="w-2/5">Product Name</th>
                 <th className="w-32">Price</th>
                 <th>Status</th>
@@ -87,15 +83,22 @@ const CartPage = () => {
                   <tr key={index}>
                     <td>{item.title}</td>
                     <td>{`$${item.price}`}</td>
-                    {item.quantity <=
-                    product.find((prod) => prod.id === item.id)?.quantity ? (
-                      <td className="text-green-700">Quantity Tersedia</td>
-                    ) : (
-                      <td className="text-red-700">Quantity Tidak Tersedia</td>
-                    )}
+                    <td
+                      className={`${
+                        item.quantity <=
+                        product.find((prod) => prod.id === item.id)?.quantity
+                          ? "text-green-700"
+                          : "text-red-700"
+                      }`}
+                    >
+                      {item.quantity <=
+                      product.find((prod) => prod.id === item.id)?.quantity
+                        ? "Quantity Tersedia"
+                        : "Quantity Tidak Tersedia"}
+                    </td>
                     <td>
                       <input
-                        className="border dark:border-slate-600 outline-none p-1 w-16"
+                        className="border dark:border-slate-600 outline-none p-1 w-16 text-white"
                         type="number"
                         value={item.quantity <= 0 ? "" : item.quantity}
                         onChange={(e) => {
