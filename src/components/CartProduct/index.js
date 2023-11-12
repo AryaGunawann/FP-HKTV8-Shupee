@@ -8,8 +8,9 @@ const CardProduct = ({
   price,
   quantity,
   actionDetail,
-  rate,
+  rating,
 }) => {
+  console.log(rating);
   return (
     <div
       className="container mx-auto border border-black rounded-2xl p-4 clickable-card relative cursor-pointer"
@@ -31,7 +32,7 @@ const CardProduct = ({
         <div className="flex items-center justify-between mt-2">
           <div className="flex items-center">
             <FaStar className="text-yellow-400" />
-            <p className="ml-1">{rate}</p>
+            <p className="ml-1">{rating}</p>
           </div>
           <div className="bg-gray-200 text-black text-sm px-2 py-1 rounded-lg">
             {category}

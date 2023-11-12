@@ -49,7 +49,6 @@ function ProductPage() {
   const url = `https://fakestoreapi.com/products/${filter}`;
 
   useEffect(() => {
-    console.log("Fetching data from API:", url); // Tambahkan console log ini
     dispatch(getProductByFilter(url));
   }, [dispatch, url]);
 
@@ -89,7 +88,7 @@ function ProductPage() {
                     category={item.category}
                     description={item.description}
                     quantity={item.quantity}
-                    rating={item.rating}
+                    rating={item.rating.rate}
                     actionAddToCart={() => {
                       if (!token) {
                         setModal(true);
@@ -109,6 +108,7 @@ function ProductPage() {
                   category={item.category}
                   description={item.description}
                   quantity={item.quantity}
+                  rating={item.rating.rate}
                   actionAddToCart={() => {
                     if (!token) {
                       setModal(true);

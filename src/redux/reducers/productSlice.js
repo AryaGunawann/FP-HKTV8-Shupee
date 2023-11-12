@@ -16,7 +16,6 @@ export const getProductByFilter = createAsyncThunk(
   async (url) => {
     try {
       const resp = await axios.get(url);
-      console.log(resp);
       return resp.data;
     } catch (error) {
       console.error(error);
@@ -89,7 +88,7 @@ const productSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getProductByFilter.fulfilled, (state, action) => {
-        console.log(action.payload);
+        
         state.filterProduct = action.payload?.map((item) => {
           const objectQuantity = state.product.find(
             (prod) => prod.id === item.id
