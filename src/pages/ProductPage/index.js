@@ -49,6 +49,7 @@ function ProductPage() {
   const url = `https://fakestoreapi.com/products/${filter}`;
 
   useEffect(() => {
+    console.log("Fetching data from API:", url); // Tambahkan console log ini
     dispatch(getProductByFilter(url));
   }, [dispatch, url]);
 
@@ -79,7 +80,7 @@ function ProductPage() {
                 .filter((item) =>
                   item.title.toLowerCase().includes(search.toLowerCase())
                 )
-                .map((item, index) => (
+                ?.map((item, index) => (
                   <CardProduct
                     key={index}
                     title={item.title}

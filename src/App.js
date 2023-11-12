@@ -7,8 +7,15 @@ import SalesRecapPage from "./pages/AdminPage/SalesRecapPage";
 import ProductDetailPage from "./pages/ProductPage/ProductDetailPage";
 import ProductPage from "./pages/ProductPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getProduct } from "./redux/reducers/productSlice";
 
 function App() {
+  const dispatch = useDispatch()  
+  useEffect(() => {
+    dispatch(getProduct())
+  },[])
   return (
     <Router>
       <div className="App">

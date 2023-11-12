@@ -6,19 +6,23 @@ import ProductDetail from "../../../components/ProductDetail";
 import SkeletonDetail from "../../../components/Skeleton/SkeletonDetail";
 import { useNavigate } from "react-router-dom";
 import { setCart } from "../../../redux/reducers/cartSlice";
+import { getProductByid } from "../../../redux/reducers/productSlice";
 
 function ProductDetailPage() {
   const params = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { product, isLoading } = useSelector((state) => state.product);
+  const { productByid, isLoading } = useSelector((state) => state.product);
 
+  console.log("test");
   useEffect(() => {
     if (localStorage.token === "admin") {
       return navigate("../../admin");
     }
-  }, []);
-
+    const url = `https://fakestoreapi.com/products/${params.id}`;
+    dispatch(getProductByid(url));
+  }, [params.id]);
+  console.log("ProductDetailPage - product:", productByid);
   const handleAddToCart = (item) => {
     const quantity = 1;
     dispatch(setCart({ ...item, quantity }));
@@ -29,25 +33,20 @@ function ProductDetailPage() {
       {isLoading ? (
         <SkeletonDetail />
       ) : (
-        product
-          .filter((item) => item.id === parseInt(params.id))
-          .map((item) => (
-            <div>
-              <ProductDetail
-                item={item}
-                key={item.id}
-                id={item.id}
-                title={item.title}
-                category={item.category}
-                price={item.price}
-                quantity={item.quantity}
-                description={item.description}
-                image={item.image}
-                loading={isLoading}
-                actionAddToCart={() => handleAddToCart(item)}
-              />
-            </div>
-          ))
+        <div>
+          <ProductDetail
+            item={productByid}
+            id={productByid.id}
+            title={productByid.title}
+            category={productByid.category}
+            price={productByid.price}
+            quantity={productByid.quantity}
+            description={productByid.description}
+            image={productByid.image}
+            loading={isLoading}
+            actionAddToCart={() => handleAddToCart(productByid)}
+          />
+        </div>
       )}
     </div>
   );

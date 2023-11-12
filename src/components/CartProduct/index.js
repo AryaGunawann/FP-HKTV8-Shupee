@@ -7,8 +7,6 @@ const CardProduct = ({
   category,
   price,
   quantity,
-  rating,
-  item,
   actionDetail,
   rate,
 }) => {

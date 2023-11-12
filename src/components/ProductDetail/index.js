@@ -30,7 +30,7 @@ const ProductDetail = ({
     item = { ...item, quantity: qty };
     qty <= 0 ? setQty(0) : dispatch(setCart(item));
 
-    console.log(item);
+    console.log("Item added to cart:", ProductDetail);
 
     setQty(0);
   };

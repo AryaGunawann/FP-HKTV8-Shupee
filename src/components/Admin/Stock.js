@@ -1,16 +1,12 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getProduct,
-  updateQuantityProduct,
-} from "../../redux/reducers/productSlice";
+import { updateQuantityProduct } from "../../redux/reducers/productSlice";
 
 const Stock = () => {
   const dispatch = useDispatch();
-  const { product } = useSelector((state) => state.product); 
+  const { product } = useSelector((state) => state.product);
   const [updatedStocks, setUpdatedStocks] = useState({});
-
+  console.log(product);
   const handleStockChange = (id, newQuantity) => {
     console.log(updatedStocks[id]);
     updatedStocks[id] < 1
@@ -45,7 +41,7 @@ const Stock = () => {
             </tr>
           </thead>
           <tbody>
-            {product.map((item) => (
+            {product?.map((item) => (
               <tr key={item.id}>
                 <td className="h-32 w-32 px-5 bg-white py-3 border-b border-neutral">
                   <img src={item.image} alt={item.title} />
