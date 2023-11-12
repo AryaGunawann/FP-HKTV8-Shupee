@@ -30,7 +30,7 @@ function ProductDetailPage() {
 
   return (
     <div className="justify-items-center">
-      {isLoading ? (
+      {isLoading || !productByid ? (
         <SkeletonDetail />
       ) : (
         <div>
